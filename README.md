@@ -5,6 +5,7 @@ This repository is a collection of personal projects. From Notebooks on *GUI* co
 - Coding *space invaders* game
 - Data analysis on the most frequent words said by USA presidents
 - Notebook on how to use *R* programming language
+- Analysis of Vodafone's data flux in Italy (PD)
 - Predictive stocks analysis with *FbProphet*
 - *Keras* for CNN's on the CIFAR-100 (and MNIST) dataset
 - Live face-recognition with webcam
