@@ -1,7 +1,10 @@
 # Personal Projects
 ### *Notebooks and coding projects on various topics*
 
-This repository is a collection of personal projects. From Notebooks on *GUI* coding, to face-recognition using *haar-cascade*. The folders contains also projects like:
+This repository is a collection of personal projects. There are mainly projects but i also wrote some notebooks with the purpose of explaining how to implement certain libraries or learn some other programming languages, in a very simple and easy to access way for everybody. 
+In detail the folders contain the following topics.
+
+
 - Coding *space invaders* game
 - Data analysis on the most frequent words said by USA presidents
 - Notebook on how to use *R* programming language
