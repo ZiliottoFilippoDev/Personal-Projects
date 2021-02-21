@@ -2,7 +2,7 @@
 ### *Notebooks and coding projects on various topics*
 
 This repository is a collection of personal projects. There are mainly projects but i also wrote some notebooks with the purpose of explaining how to implement certain libraries or learn some other programming languages, in a very simple and easy to access way for everybody. 
-There is also a very simple python library that anyone can install with """pip install iss_track"""
+There is also a very simple python library that anyone can install with """pip install isstrack_zilio""
 
 In detail the folders contain the following topics.
 
