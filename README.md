@@ -13,6 +13,6 @@ In detail the folders contain the following topics.
 - Notebook on how to use *R* programming language
 - Analysis of Vodafone's data flux in Italy (PD)
 - Predictive stocks analysis with *FbProphet*
-- *Keras* for CNN's on the CIFAR-100 (and MNIST) dataset
+- *Keras* for CNN's/GAN's on the CIFAR-100 and MNIST datasets
 - Live face-recognition with webcam
 - Other topics
