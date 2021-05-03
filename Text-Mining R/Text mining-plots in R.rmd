@@ -1,0 +1,129 @@
+---
+title: "Text mining in R"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+```{r}
+library(tidyverse)
+library(tidytext)
+library(widyr)
+library(igraph)
+library(ggraph)
+```
+
+```{r}
+user_reviews <- readr::read_tsv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-05-05/user_reviews.tsv')
+head(user_reviews)
+```
+```{r}
+## 3. Basic EDA
+user_reviews %>% count(user_name, sort = TRUE)
+user_reviews %>% head(10) %>% pull(text)
+```
+
+```{r}
+user_reviews <- user_reviews %>% select(-date)
+```
+
+
+
+## 4. Calculate word counts and correlations
+
+
+```{r}
+review_words <- user_reviews %>%
+  unnest_tokens(output = word, input = text) %>%
+  anti_join(stop_words, by = "word") %>%
+  filter(str_detect(word, "[:alpha:]")) %>%
+  distinct()
+```
+
+```{r}
+users_who_mention_word <- review_words %>%
+  count(word, name = "users_n") %>%
+  filter(users_n >= 100)
+word_correlations <- review_words %>%
+  semi_join(users_who_mention_word, by = "word") %>%
+  pairwise_cor(item = word, feature = user_name) %>%
+  filter(correlation >= 0.2)
+```
+
+
+## 5. Build a word network plot
+
+```{r}
+graph_from_data_frame(d = word_correlations,
+                      vertices = users_who_mention_word %>%
+                        semi_join(word_correlations, by = c("word" = "item1"))) %>%
+  ggraph(layout = "fr") +
+  geom_edge_link(aes(alpha = correlation)) +
+  geom_node_point() +
+  geom_node_text(aes(color = users_n, label = name), repel = TRUE)
+```
+
+
+
+## 6. Clean up the code into a function
+
+```{r}
+# Function to generate a word graph
+generate_word_graph <- function(review_words,
+                                minimum_users_n = 100,
+                                minimum_correlation = 0.2) {
+  
+  users_who_mention_word <- review_words %>%
+    count(word, name = "users_n") %>%
+    filter(users_n >= minimum_users_n)
+  
+  word_correlations <- review_words %>%
+    semi_join(users_who_mention_word, by = "word") %>%
+    pairwise_cor(item = word, feature = user_name) %>%
+    filter(correlation >= minimum_correlation)
+  graph_from_data_frame(d = word_correlations,
+                      vertices = users_who_mention_word %>%
+                        semi_join(word_correlations, by = c("word" = "item1"))) %>%
+    ggraph(layout = "fr") +
+    geom_edge_link(aes(alpha = correlation)) +
+    geom_node_point() +
+    geom_node_text(aes(color = users_n, label = name), repel = TRUE)
+  
+}
+```
+
+```{r}
+review_words %>%
+  generate_word_graph(minimum_users_n = 100, minimum_correlation = 0.2)
+review_words %>%
+  generate_word_graph(minimum_users_n = 100, minimum_correlation = 0.3)
+review_words %>%
+  generate_word_graph(minimum_users_n = 50, minimum_correlation = 0.2)
+```
+
+
+
+## 7. Generate plots for POSITIVE and NEGATIVE reviews
+
+```{r}
+# 
+# user_reviews %>% count(grade)
+review_words.NEGATIVE <- review_words %>%
+  filter(grade < 5)
+review_words.POSITIVE <- review_words %>%
+  filter(grade >= 5)
+```
+
+```{r}
+review_words.NEGATIVE %>%
+  generate_word_graph(minimum_users_n = 40, minimum_correlation = 0.2)
+```
+
+
+```{r}
+review_words.POSITIVE %>%
+  generate_word_graph(minimum_users_n = 30, minimum_correlation = 0.25)
+```
+```
+
