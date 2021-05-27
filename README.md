@@ -17,3 +17,4 @@ In detail the folders contain the following topics.
 - *Keras* for CNN's/GAN's on the CIFAR-100 and MNIST datasets
 - Live face-recognition with webcam
 - Other topics
+![SharedScreenshot](https://user-images.githubusercontent.com/78668728/119806165-3bcb5600-bee2-11eb-8705-fd6c9807a8e2.jpg)
