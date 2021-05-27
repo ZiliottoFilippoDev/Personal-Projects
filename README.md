@@ -1,3 +1,4 @@
+
 # Personal Projects
 ### *Notebooks and coding projects on various topics*
 
@@ -18,3 +19,6 @@ In detail the folders contain the following topics.
 - Live face-recognition with webcam
 - Other topics
 ![SharedScreenshot](https://user-images.githubusercontent.com/78668728/119806165-3bcb5600-bee2-11eb-8705-fd6c9807a8e2.jpg)
+
+
+![SharedScreenshot1](https://user-images.githubusercontent.com/78668728/119806661-b3998080-bee2-11eb-895a-c1f5b19e1469.jpg)
