@@ -8,7 +8,7 @@ In detail the folders contain the following topics.
 
 
 - Coding *space invaders* game
-- AutoEncoder to colourize Black&White images
+- AutoEncoder to colourize Black&White images (Pytorch)
 - K-Means Algorithm to Select the color Palette of images
 - Data analysis on the most frequent words said by USA presidents
 - Notebook on how to use *R* programming language
