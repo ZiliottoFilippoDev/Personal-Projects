@@ -7,7 +7,7 @@ There is also a very simple python library that anyone can install with """pip i
 
 In detail the folders contain the following topics.
 
-
+- Personal Application: https://share.streamlit.io/ziliottofilippodev/my_personal_application/main/Stock_prediction.py
 - Coding *space invaders* game
 - AutoEncoder to colourize Black&White images (Pytorch)
 - K-Means Algorithm to Select the color Palette of images
