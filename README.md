@@ -10,6 +10,7 @@ In detail the folders contain the following topics.
 - My Apps: 
   *   https://share.streamlit.io/ziliottofilippodev/my_personal_application/main/Stock_prediction.py 
   *   https://share.streamlit.io/ziliottofilippodev/my_personal_application/App_2/Kmeans_colour.py
+  *   https://filippoz96.wixsite.com/ziliottofilippodev
 - Coding *space invaders* game
 - AutoEncoder to colourize Black&White images (Pytorch)
 - K-Means Algorithm to Select the color Palette of images
