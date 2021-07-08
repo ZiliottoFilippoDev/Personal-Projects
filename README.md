@@ -26,6 +26,6 @@ In detail the folders contain the following topics.
 ![Progetto senza titolo (2)](https://user-images.githubusercontent.com/78668728/124968209-a2857880-e025-11eb-9815-bd0a55ac2629.jpg)
 
 
-#![SharedScreenshot](https://user-images.githubusercontent.com/78668728/119806165-3bcb5600-bee2-11eb-8705-fd6c9807a8e2.jpg)
+
 
 
